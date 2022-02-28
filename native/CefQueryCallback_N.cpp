@@ -17,7 +17,8 @@ CefRefPtr<CefQueryCallback> GetSelf(jlong self) {
 
 void ClearSelf(JNIEnv* env, jobject obj) {
   // Clear the reference added in ClientHandler::OnQuery.
-  SetCefForJNIObject<CefQueryCallback>(env, obj, nullptr, "CefQueryCallback");
+  // MyFTB: disable query callback cleanup to allow persistent callbacks
+  // SetCefForJNIObject<CefQueryCallback>(env, obj, nullptr, "CefQueryCallback");
 }
 
 }  // namespace

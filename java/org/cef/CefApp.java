@@ -538,6 +538,10 @@ public class CefApp extends CefAppHandlerAdapter {
         }
         return true;
     }
+    
+    public static final boolean startup() {
+        return startup(new String[0]);
+    }
 
     /**
      * Get the path which contains the jcef library
